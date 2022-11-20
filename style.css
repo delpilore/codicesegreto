@@ -25,3 +25,10 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
+
+.circle{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    outline: 1px solid #242323;
+}

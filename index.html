@@ -39,7 +39,7 @@
                 </h2>
             </div>
         </div>
-        <div class="row justify-content-md-center">
+        <div id="riga1" class="row justify-content-md-center">
             <div class="col">
                 <!-- PLACEHOLDER -->
             </div>
@@ -55,17 +55,20 @@
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="4" style="width: 35px">
             </div>
-            <div class="col d-flex justify-content-center">
+            <!-- <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="5" style="width: 35px">
-            </div>
+            </div> -->
             <div class="col">
                 <!-- PLACEHOLDER -->
             </div>
         </div>
 
-        <div class="row justify-content-md-center mt-3">
+        <div id="riga5" class="row justify-content-md-center mt-3">
             <div class="col">
                 <!-- PLACEHOLDER -->
+            </div>
+            <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="5" style="width: 35px" disabled>
             </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="6" style="width: 35px" disabled>
@@ -76,26 +79,41 @@
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="8" style="width: 35px" disabled>
             </div>
+            <!-- <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="10" style="width: 35px" disabled>
+            </div> -->
+            <div class="col">
+                <!-- PLACEHOLDER -->
+            </div>
+        </div>
+
+        <div id="riga9" class="row justify-content-md-center mt-3">
+            <div class="col">
+                <!-- PLACEHOLDER -->
+            </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="9" style="width: 35px" disabled>
             </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="10" style="width: 35px" disabled>
             </div>
-            <div class="col">
-                <!-- PLACEHOLDER -->
-            </div>
-        </div>
-
-        <div class="row justify-content-md-center mt-3">
-            <div class="col">
-                <!-- PLACEHOLDER -->
-            </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="11" style="width: 35px" disabled>
             </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="12" style="width: 35px" disabled>
+            </div>
+            <!-- <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="15" style="width: 35px" disabled>
+            </div> -->
+            <div class="col">
+                <!-- PLACEHOLDER -->
+            </div>
+        </div>
+
+        <div id="riga13" class="row justify-content-md-center mt-3">
+            <div class="col">
+                <!-- PLACEHOLDER -->
             </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="13" style="width: 35px" disabled>
@@ -106,17 +124,20 @@
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="15" style="width: 35px" disabled>
             </div>
+            <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="16" style="width: 35px" disabled>
+            </div>
+            <!-- <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="20" style="width: 35px" disabled>
+            </div> -->
             <div class="col">
                 <!-- PLACEHOLDER -->
             </div>
         </div>
 
-        <div class="row justify-content-md-center mt-3">
+        <div id="riga17" class="row justify-content-md-center mt-3">
             <div class="col">
                 <!-- PLACEHOLDER -->
-            </div>
-            <div class="col d-flex justify-content-center">
-                <input type="number" class="form-control" id="16" style="width: 35px" disabled>
             </div>
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="17" style="width: 35px" disabled>
@@ -130,12 +151,15 @@
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="20" style="width: 35px" disabled>
             </div>
+            <!-- <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="25" style="width: 35px" disabled>
+            </div> -->
             <div class="col">
                 <!-- PLACEHOLDER -->
             </div>
         </div>
 
-        <div class="row justify-content-md-center mt-3">
+        <div id="riga21" class="row justify-content-md-center mt-3">
             <div class="col">
                 <!-- PLACEHOLDER -->
             </div>
@@ -151,16 +175,16 @@
             <div class="col d-flex justify-content-center">
                 <input type="number" class="form-control" id="24" style="width: 35px" disabled>
             </div>
-            <div class="col d-flex justify-content-center">
-                <input type="number" class="form-control" id="25" style="width: 35px" disabled>
-            </div>
+            <!-- <div class="col d-flex justify-content-center">
+                <input type="number" class="form-control" id="30" style="width: 35px" disabled>
+            </div> -->
             <div class="col">
                 <!-- PLACEHOLDER -->
             </div>
         </div>
 
-        <div class="row justify-content-md-center mt-5">
-            <div class="col d-flex justify-content-center">
+        <div class="row justify-content-md-center mt-4">
+            <div id="res" class="col d-flex justify-content-center">
                 <button type="button" id="conferma" class="btn btn-success">Conferma</button>
             </div>
         </div>
@@ -168,6 +192,7 @@
   </body>
 
   <script>
+    // Funzione che esegue lo shuffle di un array
     String.prototype.shuffle = function () {
         var a = this.split(""),
             n = a.length;
@@ -188,28 +213,45 @@
 
         // Genero il codice basato sulla data di oggi e poi gli do uno shuffle
         var codice_di_oggi = String(Math.round(-bar.getTime()*bar.getDate()*0.314));
-        codice_di_oggi = codice_di_oggi.substring(1, 6).shuffle();
+        codice_di_oggi = codice_di_oggi.substring(1, 5).shuffle();
 
-        // Stampo per sicurezza
-        console.log(codice_di_oggi);
         return codice_di_oggi;
     }
 
-    function checkProva(codice, prova){
+    function checkProva(codice, prova, provaFormatted, rigaProva){
         var a = codice.split("")
         var b = prova.split("")
         var cont_esatte = 0;
         var cont_posto_sbagliato = 0;
-        for(var i = 0; i < 5; i++) {
+        for(var i = 0; i < 4; i++) {
             if(a[i]==b[i])
                 cont_esatte++;
             else if (codice.includes(b[i]))
                 cont_posto_sbagliato++;
         }
-        
-        alert("Hai inserito: " + cont_esatte + " numeri al posto giusto, " + cont_posto_sbagliato + " al posto sbagliato e " + (5-cont_esatte-cont_posto_sbagliato) + " sbagliati e non presenti!");
+    
+        var risultato = "";
+        for(var i = 0; i< cont_esatte; i++){
+            risultato = risultato + '<div class="circle" style="background: green;"></div>&nbsp;&nbsp;'
+        }
 
-        if(cont_esatte==5)
+        for(var i = 0; i< cont_posto_sbagliato; i++){
+            risultato = risultato + '<div class="circle" style="background: yellow;"></div>&nbsp;&nbsp;'
+        }
+
+        var sbagliate = 4-cont_esatte-cont_posto_sbagliato;
+        for(var i = 0; i< sbagliate; i++){
+            risultato = risultato + '<div class="circle" style="background: red;"></div>&nbsp;&nbsp;'
+        }
+    
+        $("#"+rigaProva).hide().html('<div class="col"></div> \
+                                      <div class="col-4 d-flex justify-content-center" style="align-items: center;"> \
+                                            <b>'+ provaFormatted +'</b> \
+                                      </div> \
+                                      <div class="col-4 d-flex justify-content-center" style="align-items: center;">'+ risultato +' \
+                                      </div><div class="col"></div>').fadeIn('slow');
+
+        if(cont_esatte==4)
             return "vinto";
         else
             return "in corso";
@@ -219,7 +261,7 @@
         // Appena carico la pagina vado subito sul primo campo disponibile e setto come primo campo attivo 1 e come ultimo campo attivo 5
         $("#1").focus();
         var activeFirstSlot = 1;
-        var activeLastSlot = 5;
+        var activeLastSlot = 4;
 
         // Dovrebbe generare la stessa per tutti e per il giorno corrente
         var codice = generateCodice();
@@ -252,27 +294,30 @@
         // Click per provare se è il codice giusto
         $("#conferma").click(function(){
             var prova = "";
+            var provaFormatted = "";
             for(var i = activeFirstSlot; i<=activeLastSlot; i++){
                 prova = prova + String($("#"+i).val());
+                if (i==activeLastSlot)
+                    provaFormatted = provaFormatted + String($("#"+i).val())
+                else
+                    provaFormatted = provaFormatted + String($("#"+i).val()) + " - "
                 $("#"+i).prop('disabled', true);
             }
 
-            var result = checkProva(codice,prova);
+            var result = checkProva(codice, prova, provaFormatted, "riga"+activeFirstSlot);
 
             if(result == "vinto"){
-                alert("Gioco terminato! Hai vinto!")
-                $("#conferma").prop('disabled', true);
+                $("#res").html('<b> HAI VINTO! </b>')
                 $(".form-control").prop('disabled', true);
             }
             else
             {
-                activeFirstSlot = activeFirstSlot + 5;
-                activeLastSlot = activeLastSlot + 5;
+                activeFirstSlot = activeFirstSlot + 4;
+                activeLastSlot = activeLastSlot + 4;
 
                 // Potrei aver terminato le righe e quindi aver terminato il gioco prima di aver indovinato!
-                if(activeFirstSlot > 25){
-                    alert("Gioco terminato! Il codice giusto era " + codice)
-                    $("#conferma").prop('disabled', true);
+                if(activeFirstSlot > 24){
+                    $("#res").html('<span class="text-center">Gioco terminato! <br> Il codice giusto era <br> <b> ' + codice + ' </b></span>')
                 }
                 else{
                     for(var i = activeFirstSlot; i<=activeLastSlot; i++){
