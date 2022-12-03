@@ -206,6 +206,7 @@
         return a.join("");
     }
 
+    // Funzione che genera il codice sulla base della data odierna
     function generateCodice(){
         // Prendo la data di oggi (più precisamente il timestamp relativo alla data di oggi)
         foo = new Date();
@@ -218,16 +219,49 @@
         return codice_di_oggi;
     }
 
+    // Funzione che fa il check del tentativo inserito
     function checkProva(codice, prova, provaFormatted, rigaProva){
+        // Mi splitto il codice da indovinare
         var a = codice.split("")
+        // Mi splitto la prova fatta
         var b = prova.split("")
+
+        // Mi costruisco un array che mi conta le occorrenze dei numeri nel codice da indovinare
+        const counts = {}
+        for (const num of a) {
+            counts[num] = counts[num] ? counts[num] + 1 : 1;
+        }
+
         var cont_esatte = 0;
         var cont_posto_sbagliato = 0;
+
         for(var i = 0; i < 4; i++) {
-            if(a[i]==b[i])
+            // Se ho messo giusto al posto giusto setto uno esatto e tolgo un'occorrenza da quelle da trovare
+            if(a[i]==b[i]){
                 cont_esatte++;
-            else if (codice.includes(b[i]))
-                cont_posto_sbagliato++;
+                counts[b[i]] = counts[b[i]]-1;
+            }
+            // Altrimenti, se il numero messo in quel posto è incluso nel codice e va ancora trovato devo fare dei ragionamenti ulteriori
+            else if (a.includes(b[i]) && counts[b[i]] > 0){
+                // Controllare se per caso l'ho già trovato in un tentativo che devo ancora controllare
+                var cont = 0;
+                for(var j = i+1; j<4; j++){
+                    // Se dopo nel tentativo metto la stessa cifra che ho messo in posizione i ed è giusta (e ce n'è solo una) allora non lo devo contare come posto sbagliato!
+                    if (b[j]==b[i] && b[j]==a[j] && counts[b[i]] == 1)
+                        cont++;
+                    // Se dopo nel tentativo metto la stessa cifra che ho messo in posizione i ed è sbagliata pure quella (e ce n'è solo una), non lo devo contare come posto sbagliato (perché sarà quella ad essere contata)
+                    else if (b[j]==b[i] && counts[b[i]] == 1)
+                        cont++;
+                    // Se dopo nel tentativo metto la stessa cifra che ho messo in posizione i ed è sbagliata pure quella (e ce n'è più di una) devo contarla come posto sbagliato quindi sottraggo uno a cont e a quelle da trovare
+                    else if (b[j]==b[i] && counts[b[i]] > 1){
+                        cont--;
+                        counts[b[i]] = counts[b[i]]-1;
+                    }
+                }
+                if(cont<=0)
+                    cont_posto_sbagliato++;
+            }
+
         }
     
         var risultato = "";
